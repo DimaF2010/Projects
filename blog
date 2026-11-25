@@ -1,0 +1,12 @@
+from flask import Flask
+import random
+
+app = Flask(__name__)
+
+books = ["What is your favourite book?","How many books have youread for all time","do you like reading?","what is your favourite kind of books?","do you know the plot of Died souls?"]
+
+@app.route("/")
+def hello_world():
+    return random.choice(books)
+
+app.run(debug=True)
